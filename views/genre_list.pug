@@ -1,0 +1,14 @@
+extends layout 
+
+block content 
+    h1= title 
+
+    if genre_list.length
+        ul 
+            each genre in genre_list
+                li(style="display: flex; gap: 2rem") 
+                    a(href=genre.url style="min-width: 10rem") #[strong #{genre.name}]
+                    
+                    div(style="display: flex; gap: 1rem;")
+                        a(href=genre.url + "/update") Rename
+                        a(href=genre.url + "/delete") Remove
